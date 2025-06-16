@@ -1,0 +1,5 @@
+datasource:
+  url: jdbc:mysql://localhost:3306/dts_test?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'
+  username: root
+  password: vuong
+  driver-class-name: com.mysql.cj.jdbc.Driver
