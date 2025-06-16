@@ -23,28 +23,28 @@ public class User {
     private Long id;
 
     @Size(max = 100)
-    @NotNull(message = "Tên không được để trống")
+    @NotBlank(message = "Tên không được để trống")
     @Column(name = "name", nullable = false, length = 100)
     private String name;
 
     @Size(max = 50)
-    @NotNull(message = "Username không được để trống")
+    @NotBlank(message = "Username không được để trống")
     @Column(name = "username", nullable = false, length = 50)
     private String username;
 
     @Size(max = 255)
-    @NotNull(message = "Mật khẩu không được để trống")
+    @NotBlank(message = "Mật khẩu không được để trống")
     @Column(name = "password", nullable = false)
     private String password;
 
     @Size(max = 100)
-    @NotNull(message = "không được để trống email")
+    @NotBlank(message = "không được để trống email")
     @Column(name = "email", nullable = false, length = 100)
     private String email;
 
     @Size(max = 10)
     @Column(name = "phone", length = 10)
-    @NotBlank(message = "Số điện thoại không được để trống")
+    @NotNull(message = "Số điện thoại không được để trống")
     private String phone;
 
     @Size(max = 255)
@@ -56,5 +56,8 @@ public class User {
 
     @Column(name = "is_deleted")
     private Boolean isDeleted;
+
+    @Column(name = "role")
+    private Boolean role;
 
 }
