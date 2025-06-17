@@ -3,14 +3,20 @@ Dự án này là một RESTful API được xây dựng bằng Spring Boot, cun
 
 ✨ Chức năng chính
 Đăng ký tài khoản mới: Cho phép người dùng tạo tài khoản với vai trò mặc định là USER.
+
 Đăng nhập & Xác thực JWT: Người dùng đăng nhập để nhận JWT, sử dụng JWT để truy cập các tài nguyên được bảo vệ.
+
 Quản lý người dùng (ROLE_ADMIN): Người dùng có vai trò ADMIN có toàn quyền xem danh sách tất cả người dùng chưa xóa, xem chi tiết và xóa mềm (soft delete) người dùng.
+
 Bảo mật: Sử dụng Spring Security và JWT để xử lý xác thực và phân quyền.
+
 Validation: Đảm bảo dữ liệu đầu vào hợp lệ và an toàn.
 
 🛠️ Yêu cầu hệ thống
 Java Development Kit (JDK): Phiên bản 17 trở lên.
-Apache Maven: Dự án này sử dụng Maven Wrapper, vì vậy bạn không cần cài đặt Maven riêng biệt trên hệ thống. Phiên bản Maven sẽ tự động được tải xuống và sử dụng là 3.9.10.
+
+Apache Maven: Dự án này sử dụng Maven Wrapper, vì vậy không cần cài đặt Maven riêng biệt trên hệ thống. Phiên bản Maven sẽ tự động được tải xuống và sử dụng là 3.9.10.
+
 Hệ quản trị Cơ sở dữ liệu: MySQL.
 
 🚀 Hướng dẫn cài đặt và chạy ứng dụng
