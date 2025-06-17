@@ -7,6 +7,7 @@ import com.example.dts_user_api.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/admin")
+@PreAuthorize("hasRole('ADMIN')")
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
@@ -32,4 +34,5 @@ public class UserController {
     public ResponseEntity<String> delete(@PathVariable("id") Long id){
         return ResponseEntity.ok(userService.deleteUser(id));
     }
+
 }

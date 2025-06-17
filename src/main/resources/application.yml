@@ -5,3 +5,8 @@ spring:
     username: root
     password: vuong
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+
+jwt:
+  signerKey: czti5ae8oJ9QCCZ1Lito40GO+HQk8i+4h4uPLNj1+KeC61NbqUikgYQgg8hTrbhQ
