@@ -6,7 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -20,8 +19,8 @@ import lombok.Setter;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "users")
 @Builder
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,41 +28,43 @@ public class User {
     private Long id;
 
     @Size(max = 100)
-    @NotBlank(message = "Tên không được để trống")
+    @NotNull
     @Column(name = "name", nullable = false, length = 100)
     private String name;
 
     @Size(max = 50)
-    @NotBlank(message = "Username không được để trống")
+    @NotNull
     @Column(name = "username", nullable = false, length = 50)
     private String username;
 
     @Size(max = 255)
-    @NotBlank(message = "Mật khẩu không được để trống")
+    @NotNull
     @Column(name = "password", nullable = false)
     private String password;
 
     @Size(max = 100)
-    @NotBlank(message = "không được để trống email")
+    @NotNull
     @Column(name = "email", nullable = false, length = 100)
     private String email;
 
-    @Size(max = 10)
-    @Column(name = "phone", length = 10)
-    @NotNull(message = "Số điện thoại không được để trống")
+    @Size(max = 20)
+    @Column(name = "phone", length = 20)
     private String phone;
 
     @Size(max = 255)
     @Column(name = "avatar")
     private String avatar;
 
-    @Column(name = "status")
-    private Boolean status;
+    @NotNull
+    @Column(name = "status", nullable = false)
+    private Boolean status = false;
 
-    @Column(name = "is_deleted")
-    private Boolean isDeleted;
+    @NotNull
+    @Column(name = "is_deleted", nullable = false)
+    private Boolean isDeleted = false;
 
-    @Column(name = "role")
-    private Boolean role;
+    @NotNull
+    @Column(name = "role", nullable = false)
+    private Boolean role = false;
 
 }

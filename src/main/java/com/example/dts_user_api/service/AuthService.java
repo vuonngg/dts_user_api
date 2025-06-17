@@ -1,9 +1,9 @@
 package com.example.dts_user_api.service;
 
 import com.example.dts_user_api.dto.AuthResponse;
-import com.example.dts_user_api.entity.User;
 import com.example.dts_user_api.dto.UserLoginDto;
 import com.example.dts_user_api.dto.UserSigupDto;
+import com.example.dts_user_api.entity.User;
 import com.example.dts_user_api.repositorys.UserRepository;
 import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JWSAlgorithm;
@@ -17,7 +17,6 @@ import lombok.experimental.NonFinal;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

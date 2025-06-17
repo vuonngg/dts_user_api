@@ -1,9 +1,7 @@
 package com.example.dts_user_api.configuration;
 
-import com.example.dts_user_api.dto.UserSigupDto;
 import com.example.dts_user_api.entity.User;
 import com.example.dts_user_api.repositorys.UserRepository;
-import com.example.dts_user_api.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
