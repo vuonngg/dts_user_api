@@ -7,6 +7,7 @@ Dự án này là một RESTful API được xây dựng bằng Spring Boot, cun
 Quản lý người dùng (ROLE_ADMIN): Người dùng có vai trò ADMIN có toàn quyền xem danh sách tất cả người dùng chưa xóa, xem chi tiết và xóa mềm (soft delete) người dùng.
 Bảo mật: Sử dụng Spring Security và JWT để xử lý xác thực và phân quyền.
 Validation: Đảm bảo dữ liệu đầu vào hợp lệ và an toàn.
+
 🛠️ Yêu cầu hệ thống
 Java Development Kit (JDK): Phiên bản 17 trở lên.
 Apache Maven: Dự án này sử dụng Maven Wrapper, vì vậy bạn không cần cài đặt Maven riêng biệt trên hệ thống. Phiên bản Maven sẽ tự động được tải xuống và sử dụng là 3.9.10.
@@ -14,15 +15,21 @@ Hệ quản trị Cơ sở dữ liệu: MySQL .
 
 🚀 Hướng dẫn cài đặt và chạy ứng dụng
 1. Clone Repository
+
 Sử dụng Git để clone dự án về máy:
+
 git clone https://github.com/vuonngg/dts_user_api.git
+
 vào thư mục dự án
+
 cd dts_user_api
 
-2. Cấu hình Cơ sở dữ liệu: khi chạy thì hibernate sẽ tự tạo database và thêm bảng.
+3. Cấu hình Cơ sở dữ liệu: khi chạy thì hibernate sẽ tự tạo database và thêm bảng.
    
 3 Cập nhật application.yml trong project:
+
 Mở file src/main/resources/application.yml.
+
 Cập nhật các thông tin kết nối database cho phù hợp với môi trường:
 
 spring:
@@ -62,6 +69,7 @@ Tài khoản USER:
 Các API được cung cấp bởi dịch vụ này chạy trên cổng mặc định 8080. URL cơ sở (Base URL) là http://localhost:8080. Dưới đây là các endpoint chính:
 
 1. Xác thực và Đăng ký (Authentication & Registration)
+   
 POST /auth/signup
 Mô tả: Đăng ký tài khoản người dùng mới.
 (Full URL ví dụ: http://localhost:8080/auth/signup)
