@@ -68,6 +68,22 @@ Tài khoản USER:
 Đăng ký tài khoản USER thông qua API http://localhost:8080/auth/signup. Tất cả các tài khoản đăng ký qua API này sẽ có vai trò USER.
 
 📈 Hướng dẫn sử dụng API (API Endpoints)
+
+Để dễ dàng kiểm thử các API, bạn có thể sử dụng Postman Collection đã được cung cấp trong dự án.
+
+1.  **Tải Postman Collection:**
+    * Truy cập vào repository GitHub của dự án.
+    * Điều hướng đến thư mục `postman_collections/`.
+    * Nhấp vào file `dts_test.postman_collection.json`.
+    * Trên trang hiển thị nội dung file, nhấp vào nút tải xuống góc trên bên phải.
+
+2.  **Import Collection vào Postman:**
+    * Mở ứng dụng Postman.
+    * Nhấn vào nút `Import` ở góc trên bên trái.
+    * Chọn `Upload Files` và duyệt đến file `dts_test.postman_collection.json` mà  vừa tải về.
+    * Nhấn `Import` để hoàn tất.
+    * Sau khi import, bạn sẽ thấy Collection `dts_test` trong thanh bên trái của Postman, chứa tất cả các request đã được cấu hình sẵn.
+
 Các API được cung cấp bởi dịch vụ này chạy trên cổng mặc định 8080. URL cơ sở (Base URL) là http://localhost:8080. Dưới đây là các endpoint chính:
 
 1. Xác thực và Đăng ký (Authentication & Registration)
