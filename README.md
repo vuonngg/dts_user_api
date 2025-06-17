@@ -30,23 +30,21 @@ cd dts_user_api
 
 Mở file src/main/resources/application.yml.
 
-Cập nhật các thông tin kết nối database cho phù hợp với môi trường:
+Cập nhật 2 thông tin kết nối database cho phù hợp với môi trường:
+             
+     spring:
+       datasource:
+         url: jdbc:mysql://localhost:3306/dts_test?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'
+         username: root(cần đổi lại phù hợp với database)
+         password: vuong(cần đổi lại phù hợp với database)
+         driver-class-name: com.mysql.cj.jdbc.Driver
+       jpa:
+         hibernate:
+           ddl-auto: update
+     jwt:
+       signerKey: czti5ae8oJ9QCCZ1Lito40GO+HQk8i+4h4uPLNj1+KeC61NbqUikgYQgg8hTrbhQ
 
-spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/dts_test?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'
-    username: root(cần đổi lại phù hợp với database)
-    password: vuong(cần đổi lại phù hợp với database)
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-
-jwt:
-  signerKey: czti5ae8oJ9QCCZ1Lito40GO+HQk8i+4h4uPLNj1+KeC61NbqUikgYQgg8hTrbhQ
-
-
-  
+ 
 4. Khởi chạy Ứng dụng
 Chạy ứng dụng từ IDE (IntelliJ IDEA, VS Code) hoặc bằng Maven Command Line:
 
@@ -59,7 +57,9 @@ mvn spring-boot:run
 Để thuận tiện cho việc kiểm tra, ứng dụng sẽ tự động tạo một tài khoản ADMIN mặc định (nếu chưa tồn tại) khi khởi động lần đầu.
 
 Tài khoản ADMIN mặc định:
+
 Username: admin
+
 Password: admin
 
 Tài khoản USER:
@@ -71,38 +71,59 @@ Các API được cung cấp bởi dịch vụ này chạy trên cổng mặc đ
 1. Xác thực và Đăng ký (Authentication & Registration)
    
 POST /auth/signup
+
 Mô tả: Đăng ký tài khoản người dùng mới.
+
 (Full URL ví dụ: http://localhost:8080/auth/signup)
+
 Request Body (JSON):
-{
-  "name": "vuong",
-  "username": "vuong111",
-  "password": "vuong",
-  "email": "123@gmail.com",
-  "phone": "0338957640",
-  "avatar":"https://avatar" //không bắt buộc
-}
 
+    {
+    "name": "vuong",
+    "username": "vuong111",
+    "password": "vuong",
+    "email": "123@gmail.com",
+    "phone": "0338957640",
+    "avatar":"https://avatar" //không bắt buộc
+   }
 
-POST /api/auth/login
+-------------------------------------------------------
+
+POST /api/auth/login 
+
 Mô tả: Đăng nhập để lấy JWT.
+
 (Full URL ví dụ: http://localhost:8080/auth/login)
+
 Request Body (JSON):
-{
+
+    {
     "username":"admin",
     "password":"admin"
-}
+    }
+
+-------------------------------------------------------
 
 DELETE /admin/delete/(id của user cần xóa)
+
 Mô tả: Xóa người dùng.
+
 Yêu cầu xác thực: Cần có JWT hợp lệ của tài khoản ADMIN
+
 Authorization: Bearer <jwt>
+
 (Full URL ví dụ: http://localhost:8080/admin/delete/6)
 
+-------------------------------------------------------
+
 GET /admin/users
+
 Mô tả: Lấy tất cả người dùng chưa xóa.
+
 Yêu cầu xác thực: Cần có JWT hợp lệ của tài khoản ADMIN
+
 Authorization: Bearer <jwt>
+
 (Full URL ví dụ: http://localhost:8080/admin/users)
 
 
