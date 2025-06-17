@@ -11,7 +11,7 @@ Validation: Đảm bảo dữ liệu đầu vào hợp lệ và an toàn.
 🛠️ Yêu cầu hệ thống
 Java Development Kit (JDK): Phiên bản 17 trở lên.
 Apache Maven: Dự án này sử dụng Maven Wrapper, vì vậy bạn không cần cài đặt Maven riêng biệt trên hệ thống. Phiên bản Maven sẽ tự động được tải xuống và sử dụng là 3.9.10.
-Hệ quản trị Cơ sở dữ liệu: MySQL .
+Hệ quản trị Cơ sở dữ liệu: MySQL.
 
 🚀 Hướng dẫn cài đặt và chạy ứng dụng
 1. Clone Repository
@@ -24,9 +24,9 @@ vào thư mục dự án
 
 cd dts_user_api
 
-3. Cấu hình Cơ sở dữ liệu: khi chạy thì hibernate sẽ tự tạo database và thêm bảng.
+2. Cấu hình Cơ sở dữ liệu: khi chạy thì hibernate sẽ tự tạo database và thêm bảng.
    
-3 Cập nhật application.yml trong project:
+3. Cập nhật application.yml trong project:
 
 Mở file src/main/resources/application.yml.
 
