@@ -3,13 +3,9 @@ Dự án này là một RESTful API được xây dựng bằng Spring Boot, cun
 
 ✨ Chức năng chính
 Đăng ký tài khoản mới: Cho phép người dùng tạo tài khoản với vai trò mặc định là USER.
-
 Đăng nhập & Xác thực JWT: Người dùng đăng nhập để nhận JWT, sử dụng JWT để truy cập các tài nguyên được bảo vệ.
-
 Quản lý người dùng (ROLE_ADMIN): Người dùng có vai trò ADMIN có toàn quyền xem danh sách tất cả người dùng chưa xóa, xem chi tiết và xóa mềm (soft delete) người dùng.
-
 Bảo mật: Sử dụng Spring Security và JWT để xử lý xác thực và phân quyền.
-
 Validation: Đảm bảo dữ liệu đầu vào hợp lệ và an toàn.
 
 🛠️ Yêu cầu hệ thống
