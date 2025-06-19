@@ -26,9 +26,25 @@ vào thư mục dự án
 
 cd dts_user_api
 
-2. Cấu hình Cơ sở dữ liệu: khi chạy thì hibernate sẽ tự tạo database và thêm bảng.
+2. Cấu hình Cơ sở dữ liệu: 
+Chạy dữ liệu:
+
+       create database dts_test;
+       use dts_test;
+       CREATE TABLE users (
+          id BIGINT AUTO_INCREMENT PRIMARY KEY,
+          `name` VARCHAR(100) NOT NULL,
+          username VARCHAR(50) NOT NULL UNIQUE,
+          `password` VARCHAR(255) NOT NULL,
+          email VARCHAR(100) NOT NULL UNIQUE,
+          phone VARCHAR(20) NULL,
+          avatar VARCHAR(255) NULL,
+          `status` BOOLEAN NOT NULL DEFAULT TRUE,
+          is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
+          `role` BOOLEAN NOT NULL DEFAULT 0
+          );
    
-3. Cập nhật application.yml trong project:
+4. Cập nhật application.yml trong project:
 
 Mở file src/main/resources/application.yml.
 
